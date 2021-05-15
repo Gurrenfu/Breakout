@@ -12,11 +12,14 @@ typedef struct
 	float posY;
 	int velX;
 	int velY;
+	
+	int velMag; 
 	SDL_Texture* texture;
 }Player;
 
 
 void getInput(SDL_Event& event, Player& player);
+void setVelVector(Player& entity, int newVelX, int newVelY);
 void move(Player& player, double dT);
 
 

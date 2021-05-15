@@ -9,6 +9,7 @@ const int SCREEN_HEIGHT = 480;
 //Defined in setup.cpp
 extern SDL_Window* gWindow;
 extern SDL_Renderer* gRenderer;
+extern bool gFired;
 
 
 

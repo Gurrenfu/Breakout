@@ -29,17 +29,17 @@ SDL_Texture* loadTexture(std::string path)
 }
 
 //TODO 
-//have it take in a texture pointer
-bool loadMedia(Player* player)
+//have it take in a texture pointer and path
+bool loadMedia(Player* player, std::string path)
 {	//loading flag
 	bool wasSuccessful = true;
 
 	//Load image
 	//send to surface loader first
-	player->texture = loadTexture("../Assets/greenBlock.png");
+	player->texture = loadTexture(path);
 	if (player->texture == NULL)
 	{
-		printf("Unable to LOAD image %s! SDL Error: %s\n", "../Assets/greenBlock.png", SDL_GetError());
+		printf("Unable to LOAD image %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
 		wasSuccessful = false;
 	}
 

@@ -5,7 +5,7 @@
 #include <string>
 #include "entity.h"
 
-bool loadMedia(Player* player);
+bool loadMedia(Player* player, std::string path);
 SDL_Texture* loadTexture(std::string path);
 void blit(SDL_Texture* texture, int x, int y);
 
