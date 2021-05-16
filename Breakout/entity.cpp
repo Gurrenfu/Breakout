@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include "entity.h"
 #include "defs.h"
+#include "media.h"
 
 
 void getInput(SDL_Event& event, Player& player)
@@ -56,4 +57,21 @@ void move(Player& entity, double dT)
 	//printf("dT %f!\n", dT);
 	//printf("Player.posX %f! Player.velX: %i\n", player.posX, player.velX);
 	//printf("Player.posY %d! Player.posX: %d\n", player.posY, player.posX);
+}
+
+void initPlayerStruct(Player& entity, std::string path, float posX, float posY, int velX, int velY, int velMag)
+{
+	if (!loadMedia(&entity, path))
+	{
+		printf("Failed to load media for player struct!\n");
+	}
+	else
+	{
+		entity.posX = posX;
+		entity.posY = posY;
+		entity.velX = velX;
+		entity.velY = velY;
+		entity.velMag = velMag;
+		playerEntites.push_back(entity);
+	}
 }
